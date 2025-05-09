@@ -1,6 +1,8 @@
+using QuadGK
+using FastGaussQuadrature
+using LinearAlgebra
 
-
-
+x, w = gausslegendre(10)
 f(x)=(1-x^2)^(1/2)
 I = dot(w, f.(x))
 

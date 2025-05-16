@@ -1,9 +1,6 @@
 using QuadGK
-using FastGaussQuadrature
-using LinearAlgebra
 
-x, w = gausslegendre(10)
-f(x)=(1-x^2)^(1/2)
-I = dot(w, f.(x))
-
-1.5715139555642919
+f(x) = sqrt(1 - x^2)
+result, err = quadgk(f, -1, 1; rtol=1e-12, atol=1e-12)
+julia> println("積分値: ", result)
+julia> println("推定誤差: ", err)
